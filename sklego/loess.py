@@ -50,7 +50,7 @@ class LoessRegressor(BaseEstimator, RegressorMixin):
             distances = np.array([distance.euclidean(x, xsi) for xsi in xs])
 
             # Normalize:
-            distances = distances/distances.max()
+            distances = distances / distances.max()
 
             weights = 1 - distances
 
@@ -81,5 +81,3 @@ class LoessRegressor(BaseEstimator, RegressorMixin):
             y_pred = np.append(y_pred, model.predict(x.reshape(-1, 1)))
 
         return y_pred
-
-
